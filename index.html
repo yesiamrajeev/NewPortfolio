@@ -53,42 +53,38 @@
     text-align: center;
   }
 
+  #loading {
+      font-size: 24px;
+      color: #CC313D;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #F7C5CC;
+    }
 
-  .loading-screen {
-            position: fixed;
-            width: 100%;
-            height: 100vh;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            transition: opacity 0.5s ease-out;
-        }
-
-        .loading-screen.hidden {
-            opacity: 0;
-            pointer-events: none;
-        }
+    #content {
+      display: none; /* Hidden initially */
+    }
   
 </style>
 
-<body>
-  <!-- <div id="loading-screen">
-    <div class="loader">Loading...</div>
-</div> -->
-<script>
-  window.addEventListener('load', function() {
-      var loadingScreen = document.getElementById('loading-screen');
-      loadingScreen.classList.add('hidden');
-      setTimeout(function() {
-          loadingScreen.style.display = 'none';
-      }, 500);
-  });
-</script>
-<div class="loading-screen" id="loading-screen">
-  <p style="color: rgb(0, 0, 0); font-size: 24px;">Loading...</p>
-</div>
 
+<body>
+  <script>
+     document.addEventListener("DOMContentLoaded", function() {
+      const loadingElement = document.getElementById("loading");
+      const contentElement = document.getElementById("content");
+
+      // Set a timeout of 5 seconds
+      setTimeout(function() {
+        // Hide the loading div and show the content div
+        loadingElement.style.display = "none";
+        contentElement.style.display = "block";
+      }, 5000); 
+    });
+  </script>
+  <div id="loading">Loading...</div>
   <header id="header">
     <div class="container">
       <!-- <a href="#header" class="cursor" >Home<b style="color: rgb(245, 122, 77); font-size: 28px;">;</b></a> -->
