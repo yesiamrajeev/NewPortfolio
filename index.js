@@ -439,20 +439,20 @@ const elements = document.querySelectorAll('.a1, .a2, .a3, .a4');
       );
     }
   
+    
     // Function to add animation class when section is in viewport
     function animateOnScroll() {
       const sections = document.querySelectorAll('.animate-on-scroll');
       sections.forEach((section) => {
-        if (isInViewport(section)) {
+        if (isInViewport(section) && !section.classList.contains('animated')) {
           section.classList.add('animate');
-        } else {
-          section.classList.remove('animate');
+          section.classList.add('animated'); // Add this class to indicate that animation has been applied
         }
       });
     }
-  
+    
     // Initial check when page loads
     window.addEventListener('load', animateOnScroll);
     // Check when scrolling
     window.addEventListener('scroll', animateOnScroll);
-  
+    
