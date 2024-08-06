@@ -806,7 +806,7 @@
         }
         ::-webkit-scrollbar-track {
           /* background-color: #e73030;  */
-          background-image: url(./img/Lunar\ New\ Year\ 2023\ 10\ \(3\).png);
+          background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/background.png?alt=media&token=4a7f380f-0422-4898-bae0-98fd8040ec4b);
           background-repeat: no-repeat;
           background-size: cover;
   
@@ -988,7 +988,7 @@
         .container {
           white-space: nowrap;
           overflow-x: auto;
-          background-image: url(./img/Lunar\ New\ Year\ 2023\ 10\ \(3\).png);
+          background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/background.png?alt=media&token=4a7f380f-0422-4898-bae0-98fd8040ec4b);
 
         }
         .container .nav-item {
