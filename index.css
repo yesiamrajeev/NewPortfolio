@@ -64,16 +64,16 @@
     margin: 0;
     padding: 0;
     -webkit-box-sizing: border-box;
-    box-sizing: border-box;
+            box-sizing: border-box;
     background-color: rgb(255, 255, 255);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/background.png?alt=media&token=4a7f380f-0422-4898-bae0-98fd8040ec4b);
-    background-attachment: fixed; /* Add this line to make the background fixed */
-    scrollbar-width: thin; 
+    /* background-image: url(./img/Lunar\ New\ Year\ 2023\ 10.png); */
+    scrollbar-width:thin; 
     scrollbar-color: #660404 #e73030;
-}
+  }
 
 
       ::-webkit-scrollbar {
