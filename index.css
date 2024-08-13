@@ -432,6 +432,9 @@
       gap: 40px;
       justify-content: center;
       padding: 200px;
+      margin-top: -6%;
+      margin-bottom: -6%;
+
     }
     
     .card {
@@ -769,8 +772,13 @@
   color: #ffffff;
 }
   @media only screen and (max-width: 768px) {
+    #proHead{
+      margin-top: 20%;
+    }
     #skills {
       grid-template-columns: repeat(2, 1fr); 
+      margin-top: -50%;
+      margin-bottom: -50%;
     }
     .achievement-card {
       flex-direction: column-reverse;
