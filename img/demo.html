@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apple Booting Idea</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #000;
+            color: #fff;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        #helloMessage {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            opacity: 1;
+            transform: translateY(-20px);
+            transition: opacity 1s ease-in-out, transform 1s ease-in-out;
+        }
+
+        .fade-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .fade-out {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div id="helloMessage">Hello</div>
+    </div>
+    <script>
+        const helloMessage = document.getElementById('helloMessage');
+        const languages = [
+            "Hello", "Hola", "Bonjour", "Hallo", "Ciao", "こんにちは", 
+            "안녕하세요", "你好", "Olá", "Привет", "नमस्ते", "مرحبا"
+        ];
+
+        let currentIndex = 0;
+        const transitionDuration = 100; // Duration of the fade transition in ms
+        const messageDisplayDuration = 300; // Duration to display each message in ms
+
+        function updateMessage() {
+            if (currentIndex >= languages.length) {
+                // Stop the interval and apply final fade-out effect
+                clearInterval(intervalId);
+                helloMessage.classList.add('fade-out');
+
+                // Redirect after the fade-out transition completes
+                setTimeout(() => {
+                    window.location.href = '../index.html'; // Redirect to the correct path
+                }, transitionDuration); // Match this delay with the transition duration
+                return;
+            }
+
+            helloMessage.classList.remove('fade-in');
+            helloMessage.classList.add('fade-out');
+
+            setTimeout(() => {
+                helloMessage.textContent = languages[currentIndex];
+                helloMessage.classList.remove('fade-out');
+                helloMessage.classList.add('fade-in');
+                currentIndex++;
+            }, transitionDuration); // Time for fade-out to complete before changing message
+        }
+
+        // Start updating messages every 3 seconds
+        const intervalId = setInterval(updateMessage, messageDisplayDuration);
+
+        // Initialize message with the first language
+        updateMessage();
+    </script>
+</body>
+</html>
