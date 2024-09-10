@@ -456,3 +456,6 @@ const elements = document.querySelectorAll('.a1, .a2, .a3, .a4');
     // Check when scrolling
     window.addEventListener('scroll', animateOnScroll);
     
+
+
+    
