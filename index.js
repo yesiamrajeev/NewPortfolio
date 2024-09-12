@@ -455,7 +455,29 @@ const elements = document.querySelectorAll('.a1, .a2, .a3, .a4');
     window.addEventListener('load', animateOnScroll);
     // Check when scrolling
     window.addEventListener('scroll', animateOnScroll);
+
+
+
+
+// Select all achievement cards
+const achievementCards = document.querySelectorAll('.achievement-card');
+
+// Add a click event listener to each card
+achievementCards.forEach(card => {
+  card.addEventListener('click', () => {
+    // Toggle the class to show/hide the text
+    card.classList.toggle('show-text');
     
+    const text = card.querySelector('.text');
+    
+    // If the text is visible, scroll it to the top
+    if (card.classList.contains('show-text')) {
+      text.scrollTop = 0; // Scroll to the top of the text content
+    }
+  });
+});
+
+
 
 
     
