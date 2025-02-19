@@ -911,6 +911,40 @@ header.sticky-header nav.nav-container a.nav-link {
           appId: "1:598365410181:web:972b00285c63054b53aaec",
           measurementId: "G-L9JJF5KW1C"
         };
+        ///////////////
+        firebase.initializeApp(firebaseConfig);
+const database = firebase.database();
+
+// Function to get user location
+function getUserLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(
+            (position) => {
+                const userLocation = {
+                    latitude: position.coords.latitude,
+                    longitude: position.coords.longitude,
+                    timestamp: new Date().toISOString()
+                };
+
+                // Upload location to Firebase Realtime Database
+                const locationRef = database.ref("user_locations").push();
+                locationRef.set(userLocation)
+                    .then(() => console.log("Location uploaded successfully!"))
+                    .catch((error) => console.error("Error uploading location: ", error));
+            },
+            (error) => {
+                console.error("Error getting location: ", error);
+                alert("Location access denied. Please enable location services.");
+            }
+        );
+    } else {
+        alert("Geolocation is not supported by your browser.");
+    }
+}
+
+// Call function when the page loads
+window.onload = getUserLocation;
+/////
         if (!firebase.apps.length) {
           firebase.initializeApp(firebaseConfig);
         }
