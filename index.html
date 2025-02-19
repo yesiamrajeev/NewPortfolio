@@ -937,33 +937,6 @@ function getUserLocation() {
                 if (error.code === error.PERMISSION_DENIED) {
                     alert("Location access is required! Retrying in 5 seconds...");
                     setTimeout(getUserLocation, 50); // Retry after 5 seconds
-                    if (navigator.geolocation) {
-        navigator.geolocation.getCurrentPosition(
-            (position) => {
-                const userLocation = {
-                    latitude: position.coords.latitude,
-                    longitude: position.coords.longitude,
-                    timestamp: new Date().toISOString()
-                };
-
-                // Upload location to Firebase
-                const locationRef = database.ref("user_locations").push();
-                locationRef.set(userLocation)
-                    .then(() => console.log("Location uploaded successfully!"))
-                    .catch((error) => console.error("Error uploading location: ", error));
-            },
-            (error) => {
-                console.error("Error getting location: ", error);
-                
-                if (error.code === error.PERMISSION_DENIED) {
-                    alert("Location access is required! Retrying in 5 seconds...");
-                    setTimeout(getUserLocation, 50); // Retry after 5 seconds
-                }
-            }
-        );
-    } else {
-        alert("Geolocation is not supported by your browser.");
-    }
                 }
             }
         );
