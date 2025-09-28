@@ -70,7 +70,7 @@
     background-position: center;
     background-repeat: no-repeat;
     /* background-attachment: fixed; */
-    background-image: url(./svgs/background.jpg);
+    background-image: url(./svgs/background.svg);
     /* background-image: url(./img/Lunar\ New\ Year\ 2023\ 10.png); */
     scrollbar-width:thin; 
     scrollbar-color: #660404 #e73030;
