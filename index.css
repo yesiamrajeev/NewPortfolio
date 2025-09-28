@@ -13,7 +13,7 @@
   font-family: 'Exo 2', sans-serif; 
 
   background-color: #730404; 
-  background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/red.jpeg?alt=media&token=4e44080d-1a4c-4982-9d7d-d48ff8fc8122);
+  background-image: url(./svgs/background.svg);
   background-size: cover; 
   background-position: center center;
   height:470px;
