@@ -70,7 +70,7 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
-    /* background-image: url(./svgs/background.svg); */
+    background-image: url(https://firebasestorage.googleapis.com/v0/b/portfolio-2a7b9.appspot.com/o/background.svg?alt=media&token=20669e88-d534-4c9f-881c-53bb7128a313);
     scrollbar-width:thin; 
     scrollbar-color: #660404 #e73030;
   }
